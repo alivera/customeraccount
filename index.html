@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Exercise 7.12</title>
+	<script type = "text/javascript">
+
+		var accountNumber = parseInt(window.prompt("Enter the customer's account number, or 0 to Exit", "0"));
+		var monthlyBalance = parseInt(window.prompt("Enter the customer's monthly balance, or 0 to Exit", "0"));
+		var monthlyCharge = parseInt(window.prompt("Enter the customers total monthly charge, or 0 to Exit", "0"));
+		var monthlyCredit = parseInt(window.prompt("Enter the customer's total monthly credit, or 0 to Exit", "0"));
+		var creditLimit = parseInt(window.prompt("Enter the customer's total credit limit, or 0 to Exit", "0"));
+		var customerCounter = 0;
+
+		while (accountNumber > 0) {
+			customerCounter = customerCounter + 1;
+			var newBalance = monthlyBalance + monthlyCharge - monthlyCredit;
+
+			document.writeln("<p>Account Number: " + accountNumber + " / Monthly Balance: " + "$" + monthlyBalance + " / Monthly Charge: " + "+$" + monthlyCharge + " / Monthly Credit: " + "-$" + monthlyCredit + " / Credit Limit: " + "$" + creditLimit + "</p>");
+
+			if (newBalance > creditLimit) {
+				document.writeln("<p>Credit limit exceeded.</P>");
+			} else {
+				document.writeln("<p>New Balance: " + "$" + newBalance + " </p>");
+			} //end if
+
+			accountNumber = parseInt(window.prompt("Enter the customer's account number, or 0 to Exit", "0"));
+			monthlyBalance = parseInt(window.prompt("Enter the customer's monthly balance, or 0 to Exit", "0"));
+			monthlyCharge = parseInt(window.prompt("Enter the customers total monthly charge, or 0 to Exit", "0"));
+			monthlyCredit = parseInt(window.prompt("Enter the customer's total monthly credit, or 0 to Exit", "0"));
+			creditLimit = parseInt(window.prompt("Enter the customer's total credit limit, or 0 to Exit", "0"));
+
+		} //end while
+		
+	</script>
+</head>
+<body>	
+</body>
+</html>
